@@ -29,13 +29,13 @@ void setup()
 
 void loop()
 {
-  Serial.println(buttonPin);
+  Serial.println(buttonState);
   buttonState = digitalRead(buttonPin);
 
   if (buttonState == HIGH)
   {
-    //delay(10); // add debounce delay
     
+    //delay(10); // add debounce delay
     if (buttonState == HIGH)
     {
        allOff();
@@ -47,11 +47,11 @@ void loop()
   {
     digitalWrite(red, HIGH);
   }
-  else if (pattern == 1)
+  else if (pattern == 2)
   {
     digitalWrite(yellow, HIGH);
   }
-  else if (pattern == 2)
+  else if (pattern == 1)
   {
     int photoResistorStatus = analogRead(photoResistor); // read the status of photo resistor
       int ledVal = map(photoResistorStatus, 300, 800, 0, 200);
